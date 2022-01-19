@@ -1,0 +1,90 @@
+{
+  "notifMsg" : {
+    "_id" : "wm-notifMsg-wm.NotificationVariable-1512886299540",
+    "name" : "notifMsg",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "title",
+      "value" : "bind:Variables.statPrgName.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "error",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1512880135277",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "CS1000W41",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgName-wm.Variable-1512880166636",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Query Garment Reservation",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcCS1000PK0_GetGmtReservQty" : {
+    "_id" : "wm-svProcCS1000PK0_GetGmtReservQty-wm.ServiceVariable-1512883732304",
+    "name" : "svProcCS1000PK0_GetGmtReservQty",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pSourceOrdnum",
+      "value" : "bind:Widgets.formFilter.formWidgets.p_source_ordnum.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pDestOrdnum",
+      "value" : "bind:Widgets.formFilter.formWidgets.p_dest_ordnum.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pTrnnum",
+      "value" : "bind:Widgets.formFilter.formWidgets.p_trnnum.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0GetGmtReservQtyResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcCS1000PK0_GetGmtReservQty",
+    "operationId" : "ProcedureExecutionController_executeProcCS1000PK0_GetGmtReservQty",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

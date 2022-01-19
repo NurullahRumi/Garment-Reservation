@@ -1,0 +1,21 @@
+[ {
+  "urlPattern" : "/pages/Login/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/QryGmtReservation/**",
+  "permission" : "Role",
+  "roles" : [ "GMTDETAILRES_VIEWPAGE" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/QrySurplusForRepeats/**",
+  "permission" : "Role",
+  "roles" : [ "GMTDETAILRES_VIEWPAGE" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/**",
+  "permission" : "Authenticated",
+  "roles" : null,
+  "httpMethod" : null
+} ]

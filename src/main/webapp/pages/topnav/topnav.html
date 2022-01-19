@@ -1,0 +1,19 @@
+<wm-partial data-ng-controller="topnavPageController" name="topnav" type="topnav"> 
+    <wm-navbar title="" show="bind:(pageParams.pShowMenubar==&quot;Y&quot;)?true:false" name="navbar1"> 
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left"> 
+            <wm-nav-item name="list_home"> 
+                <wm-anchor caption="Home" name="homeLink" iconclass="wi wi-home" on-click="Variables.goToPage_Main.invoke()"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_services"></wm-nav-item> 
+            <wm-nav-item name="nav_item5"> 
+                <wm-menu orderby="Sortseq:asc" itemaction="Action" itemlabel="progname" dataset="bind:Variables.statCartonStockMenuItems.dataSet" width="300" menuclass="btn-transparent" iconclass="" name="cartonStockMenu" caption="Cartoning Stock" autoclose="always"></wm-menu> 
+            </wm-nav-item> 
+        </wm-nav> 
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right"> 
+            <wm-nav-item name="list_help"> 
+                <wm-anchor caption="Help" name="helpLink" iconclass="wi wi-help-outline"></wm-anchor> 
+            </wm-nav-item> 
+            <wm-nav-item name="list_logout"></wm-nav-item> 
+        </wm-nav> 
+    </wm-navbar> 
+</wm-partial>

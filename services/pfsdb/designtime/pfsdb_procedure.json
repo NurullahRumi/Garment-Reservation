@@ -1,0 +1,662 @@
+{
+  "procCS1000PK0_CS411QryGmtStock" : {
+    "name" : "procCS1000PK0_CS411QryGmtStock",
+    "description" : "Get CS411 Qry Gmt Stock",
+    "version" : "V2",
+    "procedureString" : "CALL CS1000PK0.sproc_cs411_qry_gmtstock( upper(:pUsrid), :pPrgid, :pOrdnum, :pOutgmtstock)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "A50060B",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutgmtstock",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0Cs411qryGmtStockResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutgmtstock",
+        "fieldName" : "poutgmtstock",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0Cs411qryGmtStockResponsePoutgmtstock",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GMTSEQ",
+            "fieldName" : "gmtseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GMTDES",
+            "fieldName" : "gmtdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRSEQ",
+            "fieldName" : "clrseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRABB",
+            "fieldName" : "clrabb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SZESEQ",
+            "fieldName" : "szeseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "SZEDES",
+            "fieldName" : "szedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_AMTAVL",
+            "fieldName" : "wamtavl",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_INITIAL_SURPLUS",
+            "fieldName" : "winitialSurplus",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_QTYRESV",
+            "fieldName" : "wqtyresv",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_DECLARED_DATE",
+            "fieldName" : "wdeclaredDate",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "W_RESERVED_DATE",
+            "fieldName" : "wreservedDate",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "procCS1000PK0_CS411QryReservation" : {
+    "name" : "procCS1000PK0_CS411QryReservation",
+    "description" : "CS411 Qry Reservation",
+    "version" : "V2",
+    "procedureString" : "CALL CS1000PK0.sproc_cs411_qry_reservation( :pOrdnum, :pGMTSEQ, :pCLRSEQ, :pSZESEQ, :pOutreservation)",
+    "parameters" : [ {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "A50060B",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pGMTSEQ",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCLRSEQ",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSZESEQ",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutreservation",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0Cs411qryReservationResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutreservation",
+        "fieldName" : "poutreservation",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0Cs411qryReservationResponsePoutreservation",
+          "list" : true,
+          "properties" : [ {
+            "name" : "TORDNUM",
+            "fieldName" : "tordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TGMTSEQ",
+            "fieldName" : "tgmtseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_GMTDES",
+            "fieldName" : "wgmtdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TCLRSEQ",
+            "fieldName" : "tclrseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "W_CLRABB",
+            "fieldName" : "wclrabb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TSZESEQ",
+            "fieldName" : "tszeseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "W_SZEDES",
+            "fieldName" : "wszedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TRNQTY",
+            "fieldName" : "trnqty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "RECDAT",
+            "fieldName" : "recdat",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "RECBY",
+            "fieldName" : "recby",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "procCS1000PK0_GetGmtReservQty" : {
+    "name" : "procCS1000PK0_GetGmtReservQty",
+    "description" : "Get Gmt Reserv Qty",
+    "version" : "V2",
+    "procedureString" : "CALL CS1000PK0.sproc_get_gmtreservQty(upper(:pUsrid), :pPrgid, :pSourceOrdnum, :pDestOrdnum, :pTrnnum, :poutGmtRes)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "d004",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSourceOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "A50060A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDestOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "A50060L",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTrnnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "014402",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutGmtRes",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0GetGmtReservQtyResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "poutGmtRes",
+        "fieldName" : "poutGmtRes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0GetGmtReservQtyResponsePoutGmtRes",
+          "list" : true,
+          "properties" : [ {
+            "name" : "TRNNUM",
+            "fieldName" : "trnnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GMTSEQ",
+            "fieldName" : "gmtseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRSEQ",
+            "fieldName" : "clrseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "SZESEQ",
+            "fieldName" : "szeseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "TORDNUM",
+            "fieldName" : "tordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TGMTSEQ",
+            "fieldName" : "tgmtseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TCLRSEQ",
+            "fieldName" : "tclrseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "TSZESEQ",
+            "fieldName" : "tszeseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "TRNQTY",
+            "fieldName" : "trnqty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "QTYRET",
+            "fieldName" : "qtyret",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "QTYCAN",
+            "fieldName" : "qtycan",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "LCNCOD",
+            "fieldName" : "lcncod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RECBY",
+            "fieldName" : "recby",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RECDAT",
+            "fieldName" : "recdat",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "TRNSTS",
+            "fieldName" : "trnsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_QTYNOTUSED",
+            "fieldName" : "wqtynotused",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_TOTQTY",
+            "fieldName" : "wtotqty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_TOTRET",
+            "fieldName" : "wtotret",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_QTYCAN",
+            "fieldName" : "wqtycan",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_TOT_QTYNOTUSED",
+            "fieldName" : "wtotQtynotused",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "W_GMT",
+            "fieldName" : "wgmt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_CLR",
+            "fieldName" : "wclr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_SZE",
+            "fieldName" : "wsze",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_TGMT",
+            "fieldName" : "wtgmt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_TCLR",
+            "fieldName" : "wtclr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "W_TSZE",
+            "fieldName" : "wtsze",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  }
+}

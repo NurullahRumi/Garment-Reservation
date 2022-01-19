@@ -1,0 +1,118 @@
+{
+  "notifMsg" : {
+    "_id" : "wm-notifMsg-wm.NotificationVariable-1530521758334",
+    "name" : "notifMsg",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "alerttype",
+      "value" : "information",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1530514142092",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "CS1000W45",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgName-wm.Variable-1530514173856",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Query Surplus Stock for Repeats",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcCS1000PK0_CS411QryGmtStock" : {
+    "_id" : "wm-svProcCS1000PK0_CS411QryGmtStock-wm.ServiceVariable-1530521110328",
+    "name" : "svProcCS1000PK0_CS411QryGmtStock",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.formFilter.formWidgets.pOrdnum.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0Cs411qryGmtStockResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcCS1000PK0_CS411QryGmtStock",
+    "operationId" : "ProcedureExecutionController_executeProcCS1000PK0_CS411QryGmtStock",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onError" : "svProcCS1000PK0_CS411QryGmtStockonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcCS1000PK0_CS411QryReservation" : {
+    "_id" : "wm-svProcCS1000PK0_CS411QryReservation-wm.ServiceVariable-1530524493656",
+    "name" : "svProcCS1000PK0_CS411QryReservation",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.tableMaster.selecteditem.ordnum",
+      "type" : "string"
+    }, {
+      "target" : "pGMTSEQ",
+      "value" : "bind:Widgets.tableMaster.selecteditem.gmtseq",
+      "type" : "string"
+    }, {
+      "target" : "pCLRSEQ",
+      "value" : "bind:Widgets.tableMaster.selecteditem.clrseq",
+      "type" : "integer"
+    }, {
+      "target" : "pSZESEQ",
+      "value" : "bind:Widgets.tableMaster.selecteditem.szeseq",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcCs1000pk0Cs411qryReservationResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcCS1000PK0_CS411QryReservation",
+    "operationId" : "ProcedureExecutionController_executeProcCS1000PK0_CS411QryReservation",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcCS1000PK0_CS411QryReservationonBeforeUpdate($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

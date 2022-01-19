@@ -1,0 +1,62 @@
+[ {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "QryGmtReservation",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pOrdnum",
+    "type" : "string"
+  }, {
+    "name" : "pDestOrdnum",
+    "type" : "string"
+  }, {
+    "name" : "pTrnnum",
+    "type" : "string"
+  }, {
+    "name" : "pShowMenu",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "QrySurplusForRepeats",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pOrdnum",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ {
+    "name" : "pTitle",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ {
+    "name" : "pShowMenubar",
+    "type" : "string"
+  } ]
+} ]

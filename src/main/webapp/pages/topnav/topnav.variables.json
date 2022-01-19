@@ -1,0 +1,21 @@
+{
+  "statCartonStockMenuItems" : {
+    "_id" : "wm-statCartonStockMenuItems-wm.Variable-1531136109650",
+    "name" : "statCartonStockMenuItems",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "Sortseq" : "6",
+      "progname" : "CS1000WB - Detail Garment Reservation",
+      "Action" : "Variables.goToPage_QryGmtReservation.invoke();"
+    }, {
+      "Sortseq" : "7",
+      "progname" : "CS1000WB - Surplus for Repeats",
+      "Action" : "Variables.goToPage_QrySurplusForRepeats.invoke();"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  }
+}
